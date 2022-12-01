@@ -1,9 +1,12 @@
-int numberA = new Random().Next(1, 10); // 1, 2, 3, 4, 5 ... 9
-Console.WriteLine(numberA);
+Console.Write("Введите имя пользователя: ");
 
-int numberB = new Random().Next(1, 10); 
-Console.WriteLine(numberB);
+string username = Console.ReadLine();
 
-int result = numberA + numberB;
-
-Console.WriteLine(result);
+if (username.ToLower() == "маша")
+    {
+        Console.WriteLine("Приветик, Машуля!");
+    }
+else
+    {
+        Console.WriteLine("Привет, " + username + "!");
+    }
