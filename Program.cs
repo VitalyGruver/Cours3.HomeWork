@@ -2,7 +2,6 @@
 
 // Задача 2: Напишите программу, которая на вход принимает два числа и выдаёт, какое число большее, а какое меньшее.
 
-/*
 
 Console.WriteLine("Привет! Я помогу Вам узнать какая цифра из двух больше!\n");
 
@@ -12,19 +11,22 @@ int number1 = Convert.ToInt32(Console.ReadLine());
 Console.Write("Отлично! Дайте мне вторую цифру: ");
 int number2 = Convert.ToInt32(Console.ReadLine());
 
+int random = new Random().Next(0, 5);
+
+string[] phrase = { " определенно", " точно", " сто процентов", " по-любому", " зуб даю" };
 
 if (number1 > number2)
-    {
-        Console.WriteLine("");
-        Console.WriteLine("Цифра " + number1 + " больше, чем " + number2);
-    }
-else 
-    {
-        Console.WriteLine("");
-        Console.WriteLine("Цифра " + number2 + " больше, чем " + number1);
-    }
+{
+    Console.WriteLine("");
+    Console.WriteLine("Цифра " + number1 + phrase[random] + " больше, чем " + number2);
+}
+else
+{
+    Console.WriteLine("");
+    Console.WriteLine("Цифра " + number2 + phrase[random] + " больше, чем " + number1);
+}
 
-*/
+
 
 // Задача 4: Напишите программу, которая принимает на вход три числа и выдаёт максимальное из этих чисел.
 
