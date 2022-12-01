@@ -2,19 +2,24 @@
 
 /*
 
-Console.Write("Input first number: ");
+Console.WriteLine("Привет! Я помогу Вам узнать какая цифра из двух больше!\n");
+
+Console.Write("Введите первое число: ");
 int number1 = Convert.ToInt32(Console.ReadLine());
 
-Console.Write("Input second number: ");
+Console.Write("Отлично! Дайте мне вторую цифру: ");
 int number2 = Convert.ToInt32(Console.ReadLine());
+
 
 if (number1 > number2)
     {
-        Console.WriteLine("max = " + number1);
+        Console.WriteLine("");
+        Console.WriteLine("Цифра " + number1 + " больше, чем " + number2);
     }
 else 
     {
-        Console.WriteLine("max = " + number2);
+        Console.WriteLine("");
+        Console.WriteLine("Цифра " + number2 + " больше, чем " + number1);
     }
 
 */
@@ -23,13 +28,15 @@ else
 
 /*
 
+Console.WriteLine("Теперь задача по-сложнее. Дайте мне три цифры, и я скажу, какая из них больше! \n");
+
 Console.Write("Введите первое число: ");
 int num1 = Convert.ToInt32(Console.ReadLine());
 
 Console.Write("Введите второе число: ");
 int num2 = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine("Введите третье число: ");
+Console.Write("Введите третье число: ");
 int num3 = Convert.ToInt32(Console.ReadLine());
 
 int max = num1;
@@ -43,12 +50,16 @@ if(max < num3)
         max = num3;
     }
 
-Console.Write("Максимальное значение " + max);
+Console.WriteLine(" ");
+Console.WriteLine("Число " + max + " здесь точно самое большое!");
 
 */
 
 //Задача 6: Напишите программу, которая на вход принимает число и выдаёт, является ли число чётным (делится ли оно на два без остатка).
 
+/*
+
+Console.WriteLine("Теперь давайте узнаем какое число чётное, а какое нечётное!\n");
 Console.Write("Введите любую цифру: ");
 int num = Convert.ToInt32(Console.ReadLine());
 
@@ -63,11 +74,38 @@ else
         Console.WriteLine($"Число {num} - четное");
     }
 
+*/
+
 //Задача 8: Напишите программу, которая на вход принимает число (N), а на выходе показывает все чётные числа от 1 до N.
 
 /*
 
-5 -> 2, 4
-8 -> 2, 4, 6, 8
+Console.WriteLine("Это всё были цветочки! Сейчас, если Вы дадите мне цифру, я выведу на экран все четные числа от 1 до Вашей цифры. \n");
+Console.Write("Введите любое число: ");
+int N = Convert.ToInt32(Console.ReadLine());
+
+int current = 1;
+
+int divCurrent = 1;
+
+Console.WriteLine("");
+Console.WriteLine("Вуаля!\n");
+
+
+while (current < N)
+    {
+        divCurrent = current % 2;
+
+        if (divCurrent > 0)
+
+            {
+                 Console.Write(current + 1 + " ");
+
+            }
+        
+
+        current++;
+
+    }
 
 */
