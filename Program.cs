@@ -1,12 +1,14 @@
-Console.Write("Введите имя пользователя: ");
+int a = 1;
+int b = 2;
+int c = 6;
+int d = 8;
+int i = 4;
 
-string username = Console.ReadLine();
+int max = a;
 
-if (username.ToLower() == "маша")
-    {
-        Console.WriteLine("Приветик, Машуля!");
-    }
-else
-    {
-        Console.WriteLine("Привет, " + username + "!");
-    }
+if ( b > max ) max = b;
+if ( c > max ) max = c;
+if ( d > max ) max = d;
+if ( i > max ) max = i;
+
+Console.Write($"Max = {max}");
