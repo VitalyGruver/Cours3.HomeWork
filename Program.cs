@@ -1,51 +1,20 @@
-Console.Clear();
-
-// Console.SetCursorPosition(10, 4);
-// Console.WriteLine("+");
-
-int xa = 40,
-    ya = 1;
-int xb = 1,
-    yb = 30;
-int xc = 80,
-    yc = 30;
-
-Console.SetCursorPosition(xa, ya);
-Console.WriteLine("+");
-
-Console.SetCursorPosition(xb, yb);
-Console.WriteLine("+");
-
-Console.SetCursorPosition(xc, yc);
-Console.WriteLine("+");
-
-Console.SetCursorPosition(xc, yc);
-Console.WriteLine("+");
-
-int x = xa,
-    y = yb;
-int count = 0;
-
-while (count < 1000)
+int Max(int arg1, int arg2, int arg3)
 {
-    int what = new Random().Next(0, 3); // 0, 1, 2
-    if (what == 0)
-    {
-        x = (x + xa) / 2;
-        y = (y + ya) / 2;
-    }
-    if (what == 1)
-    {
-        x = (x + xb) / 2;
-        y = (y + yb) / 2;
-    }
-    if (what == 2)
-    {
-        x = (x + xc) / 2;
-        y = (y + yc) / 2;
-    }
-
-    Console.SetCursorPosition(x, y);
-    Console.WriteLine("+");
-    count++;
+    int result = arg1;
+    if (arg2 > result)
+        result = arg2;
+    if (arg3 > result)
+        result = arg3;
+    return result;
 }
+
+int[] array = {16, 22, 34, 43, 35, 6, 17, 38, 9, 34}
+array[0] = 23;
+
+int max1 = Max(array, b1, c1);
+int max2 = Max(a2, b2, c2);
+int max3 = Max(a3, b3, c3);
+
+int max = Max(max1, max2, max3);
+
+Console.WriteLine(max);
