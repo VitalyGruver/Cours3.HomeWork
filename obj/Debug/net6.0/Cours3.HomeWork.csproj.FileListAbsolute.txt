@@ -1,0 +1,15 @@
+/Users/vitalygruver/Desktop/Course3.C-/obj/Debug/net6.0/Cours3.HomeWork.csproj.AssemblyReference.cache
+/Users/vitalygruver/Desktop/Course3.C-/obj/Debug/net6.0/Cours3.HomeWork.GeneratedMSBuildEditorConfig.editorconfig
+/Users/vitalygruver/Desktop/Course3.C-/obj/Debug/net6.0/Cours3.HomeWork.AssemblyInfoInputs.cache
+/Users/vitalygruver/Desktop/Course3.C-/obj/Debug/net6.0/Cours3.HomeWork.AssemblyInfo.cs
+/Users/vitalygruver/Desktop/Course3.C-/obj/Debug/net6.0/Cours3.HomeWork.csproj.CoreCompileInputs.cache
+/Users/vitalygruver/Desktop/Course3.C-/bin/Debug/net6.0/Cours3.HomeWork
+/Users/vitalygruver/Desktop/Course3.C-/bin/Debug/net6.0/Cours3.HomeWork.deps.json
+/Users/vitalygruver/Desktop/Course3.C-/bin/Debug/net6.0/Cours3.HomeWork.runtimeconfig.json
+/Users/vitalygruver/Desktop/Course3.C-/bin/Debug/net6.0/Cours3.HomeWork.dll
+/Users/vitalygruver/Desktop/Course3.C-/bin/Debug/net6.0/Cours3.HomeWork.pdb
+/Users/vitalygruver/Desktop/Course3.C-/obj/Debug/net6.0/Cours3.HomeWork.dll
+/Users/vitalygruver/Desktop/Course3.C-/obj/Debug/net6.0/refint/Cours3.HomeWork.dll
+/Users/vitalygruver/Desktop/Course3.C-/obj/Debug/net6.0/Cours3.HomeWork.pdb
+/Users/vitalygruver/Desktop/Course3.C-/obj/Debug/net6.0/Cours3.HomeWork.genruntimeconfig.cache
+/Users/vitalygruver/Desktop/Course3.C-/obj/Debug/net6.0/ref/Cours3.HomeWork.dll
