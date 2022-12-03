@@ -17,6 +17,8 @@ Console.WriteLine($"Вторая цифра числа {randomNum} - {ShowSecond
 
 // 2. Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
 
+/*
+
 int ShowThirdNum(int num)
 {
     int thirdNum = -1;
@@ -53,3 +55,30 @@ else
     {
         Console.WriteLine($"Третья цифра числа {num} - это {result}");
     }
+
+*/
+
+// 3. Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
+
+/*
+
+bool CheckDayOff(int dayNum)
+{
+    if (dayNum == 6 || dayNum == 7)
+        return true;
+    else
+        return false;
+}
+
+int day = new Random().Next(1, 8);
+
+bool dayOff = CheckDayOff(day);
+
+if (dayOff == true)
+{
+    Console.WriteLine($"{day} день недели - это выходной!");
+}
+else
+    Console.WriteLine($"{day} день недели - это не выходной!");
+
+*/
