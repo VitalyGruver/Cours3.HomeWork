@@ -17,7 +17,6 @@ Console.WriteLine($"Вторая цифра числа {randomNum} - {ShowSecond
 
 // 2. Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
 
-/*
 
 int ShowThirdNum(int num)
 {
@@ -41,22 +40,26 @@ int ShowThirdNum(int num)
         return thirdNum;
     }
 }
+string[] array = {"Ну я же просил больше 99!", "Ты знаешь числа которые больше 99?", "Нужна цифра от 100 до 999!", "Блин! Нужно ввести три цифры!", "Ты очень невнимательный", "Просто введи 666!",};
+int arrayIndex = new Random().Next(0, 6);
 
-Console.WriteLine("Привет! Введи любое число больше 99 и я покажу тебе его третью цифру: ");
+Console.Write("Привет! Введи любое число больше 99 и я покажу тебе его третью цифру: ");
 int num = Convert.ToInt32(Console.ReadLine());
 
 int result = ShowThirdNum(num);
 
-if (result == -1)
+while (result == -1)
     {
-        Console.WriteLine("Ну я же просил больше 99 (");
-    }
-else
-    {
-        Console.WriteLine($"Третья цифра числа {num} - это {result}");
-    }
+        Console.WriteLine(array[arrayIndex]);
+        arrayIndex = new Random().Next(0, 6);
+        Console.Write("Попробуй-ка еще разок: ");
+        num = Convert.ToInt32(Console.ReadLine());
+        result = ShowThirdNum(num);
 
-*/
+    }
+Console.WriteLine($"Третья цифра числа {num} - это {result}");
+
+
 
 // 3. Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
 
