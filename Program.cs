@@ -1,4 +1,5 @@
 // 1. Напишите программу, которая принимает на вход число и проверяет, является ли оно палиндромом.
+/*
 
 void checkPolindrom(int num)
 {
@@ -43,18 +44,55 @@ int num = Convert.ToInt32(Console.ReadLine());
 
 checkPolindrom(num);
 
+*/
 
 // 2. Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
+
 /*
-A (3,6,8); B (2,1,-7), -> 15.84
 
-A (7,-5, 0); B (1,-1,9) -> 11.53
+double FindDistance( double xA, double yA, double zA, double xB, double yB, double zB)
+{
+    double distance = Math.Sqrt(Math.Pow(xA - xB, 2) + Math.Pow(yA - yB, 2) + Math.Pow(zA - zB, 2));
+    return distance;
+}
 
-Задача 23
+Console.WriteLine("Input first x: ");
+double xA = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Input first y: ");
+double yA = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Input first z: ");
+double zA = Convert.ToDouble(Console.ReadLine());
+
+Console.WriteLine("Input second x: ");
+double xB = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Input second y: ");
+double yB = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Input second z: ");
+double zB = Convert.ToDouble(Console.ReadLine());
+
+double dist = Math.Round(FindDistance(xA, yA, zA, xB, yB, zB),3);
+
+Console.WriteLine($"Distance = {dist}");
+
+*/
 
 // 3. Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
+/*
 
-3 -> 1, 8, 27
-5 -> 1, 8, 27, 64, 125
+
+void CubeTable (int n)
+{
+    int index = 1;
+    while (index <= n)
+    {
+        Console.Write(Math.Pow(index,3) + " ");
+        index = index + 1;
+    }
+}
+
+Console.WriteLine("Input N: ");
+int n = Convert.ToInt32(Console.ReadLine());
+
+CubeTable (n);
 
 */
