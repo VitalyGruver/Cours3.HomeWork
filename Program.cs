@@ -1,5 +1,5 @@
 ﻿// Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.
-/*
+
 
 int[] CreateRandomArray(int size)
 {
@@ -45,11 +45,14 @@ ShowArray(myArray);
 Console.WriteLine();
 Console.WriteLine($"В массиве {NumEven(myArray)} четных чисел");
 
-*/
+
+
+
 
 // Задача 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
 
 /*
+
 int[] CreateRandomArray(int size)
 {
     int[] array = new int[size];
@@ -96,10 +99,62 @@ Console.WriteLine($"Сумма элементов стоящих на нечет
 
 */
 
+
+
+
 // Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
 
 /*
 
-[3 7 22 2 78] -> 76
+double[] CreateRandomArray(int size)
+{
+    double[] array = new double[size];
+
+    for (int i = 0; i < size; i++)
+    {
+        array[i] = Math.Round(new Random().Next(0, 10) + new Random().NextDouble(), 2);
+    }
+
+    return array;
+}
+
+void ShowArray(double[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write(array[i] + " | ");
+    }
+    Console.WriteLine();
+
+}
+
+void FindDiffMaxMin (double[] array)
+{
+    double min = array[0];
+    double max = 0;
+    double result = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] < min) min = array[i];
+        if (array[i] > max) max = array[i];
+    }
+    result = max - min;
+    Console.WriteLine($"Минимальный элемент массива - {min}");
+    Console.WriteLine($"Максимальный элемент массива - {max}");
+    Console.WriteLine();
+    Console.WriteLine($"Разница между минимумом и максимумом - {result}");
+    Console.WriteLine();
+
+}
+
+Console.Write("Введите размер массива: ");
+int size = Convert.ToInt32(Console.ReadLine());
+
+double[] myArray = CreateRandomArray(size);
+
+Console.WriteLine();
+ShowArray(myArray);
+Console.WriteLine();
+FindDiffMaxMin(myArray);
 
 */
