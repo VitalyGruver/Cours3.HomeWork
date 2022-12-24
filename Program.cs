@@ -1,98 +1,44 @@
-// 1. Напишите программу, которая принимает на вход число и проверяет, является ли оно палиндромом.
+// Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
+
 /*
-
-void checkPolindrom(int num)
+Console.WriteLine("Сколько чисел вы хотите ввести?");
+int m = Convert.ToInt32(Console.ReadLine());
+int counter = 1;
+int result = 0;
+while (counter <= m)
 {
-    int FindNumOfDigits(int num)    //  Определяем сколько разрядов у числа
-    {
-        int divider = 1;
-        int quotient = num / divider;
-        int result = 1;
-
-        while (quotient > 9)
-        {
-            divider = divider * 10;
-            quotient = num / divider;
-            result++;
-        }
-        return result;
-    }
-
-    int step = FindNumOfDigits(num) - 1;
-    int numOnTheLeft = 0;
-    int numOnTheRight = 0;
-
-    while (num > 9 && numOnTheLeft == numOnTheRight)    //  Сравниваем крайние цифры, если равны - отбрасываем их и повторяем
-    {
-        numOnTheLeft = num / Convert.ToInt32(Math.Pow(10, step));
-        numOnTheRight = num % 10;
-
-        num = num % Convert.ToInt32(Math.Pow(10, step)) / 10;
-
-        step = step - 2;
-
-//      Console.WriteLine($"Index = {step} NumberOnTheLeft = {numOnTheLeft} NumberOnTheRight = {numOnTheRight} num = {num}");   // проверка вычислений цикла
-    }
-
-    if (numOnTheLeft == numOnTheRight) Console.WriteLine("Число является палиндромом!");
-    else Console.WriteLine("Число не является палиндромом!");
-
+    Console.Write($"Введите {counter} число: ");
+    int num = Convert.ToInt32(Console.ReadLine());
+    if (num > 0) result++;
+    counter++;
 }
-
-Console.WriteLine("Введите число для проверки: ");
-int num = Convert.ToInt32(Console.ReadLine());
-
-checkPolindrom(num);
+Console.WriteLine();
+Console.WriteLine($"Количество положительных чисел - {result}");
 
 */
 
-// 2. Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
+
+
+// Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых, заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
 
 /*
-
-double FindDistance( double xA, double yA, double zA, double xB, double yB, double zB)
+Console.WriteLine("Введите k1:");
+int k1 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите k2:");
+int k2 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите b1:");
+int b1 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите b2:");
+int b2 = Convert.ToInt32(Console.ReadLine());
+int x = 0;
+int y = 0;
+if (k1 == k2 && b1 == b2) Console.WriteLine("Прямые совпадают");
+if (k1 == k2 && b1 != b2) Console.WriteLine("Прямые не имеют точек пересечения т.к. они параллельны друг другу");
+if (k1 != k2 && b1 != b2)
 {
-    double distance = Math.Sqrt(Math.Pow(xA - xB, 2) + Math.Pow(yA - yB, 2) + Math.Pow(zA - zB, 2));
-    return distance;
+    x = (b2 - b1) / (k1 - k2);
+    y = k1 * x + b1;
+    Console.WriteLine($"Точка пересечения прямых ({x}; {y})");
 }
-
-Console.WriteLine("Input first x: ");
-double xA = Convert.ToDouble(Console.ReadLine());
-Console.WriteLine("Input first y: ");
-double yA = Convert.ToDouble(Console.ReadLine());
-Console.WriteLine("Input first z: ");
-double zA = Convert.ToDouble(Console.ReadLine());
-
-Console.WriteLine("Input second x: ");
-double xB = Convert.ToDouble(Console.ReadLine());
-Console.WriteLine("Input second y: ");
-double yB = Convert.ToDouble(Console.ReadLine());
-Console.WriteLine("Input second z: ");
-double zB = Convert.ToDouble(Console.ReadLine());
-
-double dist = Math.Round(FindDistance(xA, yA, zA, xB, yB, zB),3);
-
-Console.WriteLine($"Distance = {dist}");
-
-*/
-
-// 3. Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
-/*
-
-
-void CubeTable (int n)
-{
-    int index = 1;
-    while (index <= n)
-    {
-        Console.Write(Math.Pow(index,3) + " ");
-        index = index + 1;
-    }
-}
-
-Console.WriteLine("Input N: ");
-int n = Convert.ToInt32(Console.ReadLine());
-
-CubeTable (n);
 
 */
