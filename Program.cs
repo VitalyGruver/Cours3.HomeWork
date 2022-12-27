@@ -1,76 +1,35 @@
-// Задача 25: Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
-
-/*
-int Exponentiation (int num, int degree)
+int[,] CreateRandom2dArray()
 {
-    int result = num;
-    for (int i = 1; i < degree; i++)
-    {
-        result = result * num;
-    }
-    return result;
-}
+    Console.Write("Input a number of rows: ");
+    int rows = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a number of columns: ");
+    int columns = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a min possible value: ");
+    int minValue = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a max possible value: ");
+    int maxValue = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine("Введите число: ");
-int num = Convert.ToInt32(Console.ReadLine());
+    int[,] array = new int[rows, columns];
 
-Console.WriteLine("Введите степень в которую необходимо возвести число: ");
-int degree = Convert.ToInt32(Console.ReadLine());
-
-int result = Exponentiation (num, degree);
-
-Console.WriteLine($"{num} в степени {degree} - это {result}");
-*/
-
-// Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
-
-/*
-
-int FindSum(int num)
-{
-    int sum = num % 10;
-    int current = num / 10;
-    while (current > 0)
-    {
-        sum = sum + current % 10;
-        current = current / 10;
-    }
-    return sum;
-}
-
-Console.WriteLine("Введите число: ");
-int num = Convert.ToInt32(Console.ReadLine());
-
-int sum = FindSum(num);
-
-Console.WriteLine($"Сумма цифр в числе равна {sum}");
-/*
-
-// Задача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
-
-/*
-int[] CreateRandomArray(int size)
-{
-    int[] array = new int[size];
-    for (int i = 0; i < size; i++)
-    {
-        Console.WriteLine($"Введите {i+1} элемент массива: ");
-        int num = Convert.ToInt32(Console.ReadLine());
-        array[i] = num;
-    }
+    for (int i = 0; i < rows; i++) 
+        for (int j = 0; j < columns; j++) 
+            array[i,j] = new Random().Next(minValue, maxValue + 1);
+    
     return array;
 }
 
-void ShowArray(int[] array)
+void Show2dArray (int[,] array)
 {
-    for (int i = 0; i < array.Length; i++)
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        Console.Write(array[i] + " ");
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i,j] + "\t");
+        }
+        Console.WriteLine();
     }
+    Console.WriteLine();
 }
 
-Console.WriteLine("Введите размер массива: ");
-int size = Convert.ToInt32(Console.ReadLine());
-
-ShowArray(CreateRandomArray(size));
-*/
+int[,] myArray = CreateRandom2dArray();
+Show2dArray(myArray);
