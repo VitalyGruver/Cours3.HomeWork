@@ -1,160 +1,162 @@
-﻿// Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.
-
-
-int[] CreateRandomArray(int size)
-{
-    int[] array = new int[size];
-
-    for (int i = 0; i < size; i++)
-    {
-        array[i] = new Random().Next(100, 1000);
-    }
-
-    return array;
-}
-
-void ShowArray(int[] array)
-{
-    for (int i = 0; i < array.Length; i++)
-    {
-        Console.Write(array[i] + " ");
-    }
-    Console.WriteLine();
-
-}
-
-int NumEven(int[] array)
-{
-    int result = 0;
-    int even = 0;
-    for (int i = 0; i < array.Length; i++)
-    {
-        even = array[i] % 2;
-        if (even == 0) result++;
-    }
-    return result;
-}
-
-Console.Write("Введите размер массива: ");
-int size = Convert.ToInt32(Console.ReadLine());
-
-int[] myArray = CreateRandomArray(size);
-
-Console.WriteLine();
-ShowArray(myArray);
-Console.WriteLine();
-Console.WriteLine($"В массиве {NumEven(myArray)} четных чисел");
-
-
-
-
-
-// Задача 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
+﻿// Задача 47. Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
 
 /*
 
-int[] CreateRandomArray(int size)
+double[,] CreateRandom2dArray()
 {
-    int[] array = new int[size];
+    Console.Write("Input a number of rows: ");
+    int rows = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a number of columns: ");
+    int columns = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a min possible value: ");
+    int minValue = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a max possible value: ");
+    int maxValue = Convert.ToInt32(Console.ReadLine());
 
-    for (int i = 0; i < size; i++)
+    double[,] array = new double[rows, columns];
+
+    for (int i = 0; i < rows; i++) 
+        for (int j = 0; j < columns; j++) 
+            array[i,j] = Math.Round(new Random().Next(minValue, maxValue + 1) + new Random().NextDouble(),2);
+    
+    return array;
+}
+
+void Show2dArray (double[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        array[i] = new Random().Next(0, 100);
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i,j] + "\t");
+        }
+        Console.WriteLine();
     }
+    Console.WriteLine();
+}
+
+double[,] myArray = CreateRandom2dArray();
+Show2dArray(myArray);
+
+*/
+
+// Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и возвращает значение этого элемента или же указание, что такого элемента нет.
+
+/*
+
+int[,] CreateRandom2dArray()
+{
+    int rows = new Random().Next(4, 6);
+    int columns = new Random().Next(4, 6);
+    int[,] array = new int[rows, columns];
+
+    for (int i = 0; i < rows; i++) 
+        for (int j = 0; j < columns; j++) 
+            array[i,j] = new Random().Next(0, 10);
+    
+    return array;
+}
+
+void Show2dArray (int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i,j] + " ");
+        }
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
+
+bool FindArrayElementValue (int[,] array, int i, int j)
+{
+    return i < array.GetLength(0) && j < array.GetLength(1);
+}
+
+int[,] myArray = CreateRandom2dArray();
+Show2dArray(myArray);
+Console.WriteLine();
+Console.Write("Введите номер строки: ");
+int i = Convert.ToInt32(Console.ReadLine()) - 1;
+Console.Write("Введите номер столбца: ");
+int j = Convert.ToInt32(Console.ReadLine()) - 1;
+Console.WriteLine();
+
+bool result = FindArrayElementValue (myArray, i, j);
+if (result == true) 
+{
+    Console.WriteLine($"Ваш элемент - {myArray[i,j]}");
+}
+else Console.WriteLine("Ваш элемент не существует в данном массиве");
+
+*/
+
+// Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
+
+int[,] CreateRandom2dArray()
+{
+    Console.Write("Введите количество строк: ");
+    int rows = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Введите количество столбцов: ");
+    int columns = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Введите минимальное значение: ");
+    int minValue = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Введите максимальное значение: ");
+    int maxValue = Convert.ToInt32(Console.ReadLine());
+
+    int[,] array = new int[rows, columns];
+
+    for (int i = 0; i < rows; i++)
+        for (int j = 0; j < columns; j++)
+            array[i, j] = new Random().Next(minValue, maxValue + 1);
 
     return array;
+}
+
+void Show2dArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i, j] + "\t");
+        }
+        Console.WriteLine();
+    }
+    Console.WriteLine();
 }
 
 void ShowArray(int[] array)
 {
     for (int i = 0; i < array.Length; i++)
     {
-        Console.Write(array[i] + " ");
+        Console.Write(array[i] + "\t");
     }
     Console.WriteLine();
-
 }
 
-int FindSum(int[] array)
+
+int[] FindAverageColumns(int[,] array)
 {
     int sum = 0;
-    int noEven = 0;
-    for (int i = 0; i < array.Length; i++)
+    int[] average = new int[array.GetLength(1)];
+
+    for (int i = 0; i < array.GetLength(1); i++)
     {
-        noEven = i % 2;
-        if (noEven != 0) sum += array[i];
+        for (int j = 0; j < array.GetLength(0); j++)
+        {
+            sum = sum + array[j, i];
+        }
+        average[i] = sum;
     }
-    return sum;
+    return average;
 }
 
-Console.Write("Введите размер массива: ");
-int size = Convert.ToInt32(Console.ReadLine());
-
-int[] myArray = CreateRandomArray(size);
-
+int[,] myArray = CreateRandom2dArray();
+Show2dArray(myArray);
 Console.WriteLine();
-ShowArray(myArray);
-Console.WriteLine();
-Console.WriteLine($"Сумма элементов стоящих на нечетных позициях - {FindSum(myArray)}");
+int[] averageArray = FindAverageColumns(myArray);
+ShowArray(averageArray);
 
-*/
-
-
-
-
-// Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
-
-/*
-
-double[] CreateRandomArray(int size)
-{
-    double[] array = new double[size];
-
-    for (int i = 0; i < size; i++)
-    {
-        array[i] = Math.Round(new Random().Next(0, 10) + new Random().NextDouble(), 2);
-    }
-
-    return array;
-}
-
-void ShowArray(double[] array)
-{
-    for (int i = 0; i < array.Length; i++)
-    {
-        Console.Write(array[i] + " | ");
-    }
-    Console.WriteLine();
-
-}
-
-void FindDiffMaxMin (double[] array)
-{
-    double min = array[0];
-    double max = 0;
-    double result = 0;
-    for (int i = 0; i < array.Length; i++)
-    {
-        if (array[i] < min) min = array[i];
-        if (array[i] > max) max = array[i];
-    }
-    result = max - min;
-    Console.WriteLine($"Минимальный элемент массива - {min}");
-    Console.WriteLine($"Максимальный элемент массива - {max}");
-    Console.WriteLine();
-    Console.WriteLine($"Разница между минимумом и максимумом - {result}");
-    Console.WriteLine();
-
-}
-
-Console.Write("Введите размер массива: ");
-int size = Convert.ToInt32(Console.ReadLine());
-
-double[] myArray = CreateRandomArray(size);
-
-Console.WriteLine();
-ShowArray(myArray);
-Console.WriteLine();
-FindDiffMaxMin(myArray);
-
-*/
