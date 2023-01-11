@@ -95,7 +95,7 @@ void FindStringWithMinSum (int[,] array)
     int[] sum = new int[array.GetLength(0)];
     Console.Write("Суммы элементов строк: ");
     for (int i = 0; i < array.GetLength(0); i++)
-    {   
+    {
 
         for (int j = 0; j < array.GetLength(1); j++)
         {
@@ -160,21 +160,37 @@ void Show2dArray(int[,] array)
     Console.WriteLine();
 }
 
-void MatrixMultiplex (int[,] array1, int[,] array2)
+void MatrixMultiplex(int[,] array1, int[,] array2)
 {
     if (array1.GetLength(1) == array2.GetLength(0))
     {
-        int[,] array3 = new int[array1.GetLength(0), array2.GetLength(1)];
-        for (int i = 0; i < array1.GetLength(0); i++)
-        {
-            for (int j = 0; j < array2.GetLength(1); j++)
-            {
-                array3[i,j] = array1[i,j] * array2[i,j];
-            }
-        }           
-    }
-    else Console.WriteLine("Перемножение матриц невозможно!");
 
+        
+        int[,] array3 = new int[array1.GetLength(0), array2.GetLength(1)];
+        for (int i = 0; i <= array1.GetLength(0) - 1; i++)
+        {
+            for (int j = 0; j < array1.GetLength(1) - 1; j++)
+            {
+                for (int h = 0; h < array1.GetLength(1); h++)
+                {
+                    array3[i, j] += array1[i, h] * array2[h, j];
+                }
+            }
+        }
+
+
+        for (int i = 0; i < array3.GetLength(0); i++)
+        {
+            for (int j = 0; j < array3.GetLength(1); j++)
+            {
+                Console.Write(array3[i, j] + "\t");
+            }
+            Console.WriteLine();
+        }
+        Console.WriteLine();
+    }
+    else
+        Console.WriteLine("Перемножение матриц невозможно!");
 }
 
 int[,] array1 = CreateRandom2dArray();
@@ -182,7 +198,7 @@ Show2dArray(array1);
 Console.WriteLine();
 int[,] array2 = CreateRandom2dArray();
 Show2dArray(array2);
-MatrixMultiplex (array1, array2);
+MatrixMultiplex(array1, array2);
 /*
 Например, даны 2 матрицы:
 2 4 | 3 4
