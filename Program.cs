@@ -159,19 +159,16 @@ void Show2dArray(int[,] array)
     }
     Console.WriteLine();
 }
-
 void MatrixMultiplex(int[,] array1, int[,] array2)
 {
-    if (array1.GetLength(1) == array2.GetLength(0))
+    if (array1.GetLength(1) == array2.GetLength(0)) // Проверяем возможность перемножения матриц
     {
-
-        
-        int[,] array3 = new int[array1.GetLength(0), array2.GetLength(1)];
-        for (int i = 0; i <= array1.GetLength(0) - 1; i++)
+        int[,] array3 = new int[array1.GetLength(0), array2.GetLength(1)];  // Создаем результирующий массив
+        for (int i = 0; i <= array1.GetLength(0) - 1; i++) // Двигаемся по столбцам первой матрицы
         {
-            for (int j = 0; j < array1.GetLength(1) - 1; j++)
+            for (int j = 0; j < array1.GetLength(1) - 1; j++) // Двигаемся по строкам первой матрицы
             {
-                for (int h = 0; h < array1.GetLength(1); h++)
+                for (int h = 0; h < array1.GetLength(1); h++) // Умножаем элементы и записываем сумму в результирующую матрицу
                 {
                     array3[i, j] += array1[i, h] * array2[h, j];
                 }
@@ -179,7 +176,7 @@ void MatrixMultiplex(int[,] array1, int[,] array2)
         }
 
 
-        for (int i = 0; i < array3.GetLength(0); i++)
+        for (int i = 0; i < array3.GetLength(0); i++) // Выводим результирующую матрицу
         {
             for (int j = 0; j < array3.GetLength(1); j++)
             {
@@ -200,12 +197,6 @@ int[,] array2 = CreateRandom2dArray();
 Show2dArray(array2);
 MatrixMultiplex(array1, array2);
 /*
-Например, даны 2 матрицы:
-2 4 | 3 4
-3 2 | 3 3
-Результирующая матрица будет:
-18 20
-15 18
 
 Задача 60. ...Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
 Массив размером 2 x 2 x 2
