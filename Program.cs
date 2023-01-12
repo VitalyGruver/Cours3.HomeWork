@@ -257,5 +257,37 @@ else
 12 13 14 05
 11 16 15 06
 10 09 08 07
-
 */
+
+int[,] CreateRandom2dArray()
+{
+    Console.Write("Input a number of rows: ");
+    int rows = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a number of columns: ");
+    int columns = Convert.ToInt32(Console.ReadLine());
+
+    int[,] array = new int[rows, columns];
+    for (int i = 0; i < rows; i++)
+        for (int j = 1; j < columns; j++)
+            array[i, j] = array[i, j-1] + 1;
+                for (int i = 0; i < rows; i++)
+                    array[i, j] = array[i, j-1] + 1;
+
+    return array;
+}
+void Show2dArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i, j] + "\t");
+        }
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
+
+int[,] myArray = CreateRandom2dArray();
+Console.WriteLine();
+Show2dArray(myArray);
