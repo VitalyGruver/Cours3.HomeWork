@@ -1,6 +1,6 @@
 // Задача 54: Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию элементы каждой строки двумерного массива.
 
-/*
+
 
 int[,] CreateRandom2dArray()
 {
@@ -56,7 +56,7 @@ Console.WriteLine();
 SortRowsDescending(myArray);
 Show2dArray(myArray);
 
-*/
+
 
 // Задача 56: Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с наименьшей суммой элементов.
 /*
@@ -249,15 +249,9 @@ else
 
 */
 
-// Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4.
+// Задача 62. (Решил не до конца, не хватило времени. Оставил для себя, чтобы закончить) Напишите программу, которая заполнит спирально массив 4 на 4.
 
 /*
-Например, на выходе получается вот такой массив:
-01 02 03 04
-12 13 14 05
-11 16 15 06
-10 09 08 07
-*/
 
 int[,] CreateRandom2dArray()
 {
@@ -267,11 +261,33 @@ int[,] CreateRandom2dArray()
     int columns = Convert.ToInt32(Console.ReadLine());
 
     int[,] array = new int[rows, columns];
-    for (int i = 0; i < rows; i++)
-        for (int j = 1; j < columns; j++)
-            array[i, j] = array[i, j-1] + 1;
-                for (int i = 0; i < rows; i++)
-                    array[i, j] = array[i, j-1] + 1;
+
+    int i = 0;
+    int j = 0;
+
+    for (int k = 1; k < rows * columns; k++)
+    {
+        while (j < columns - k) // Двигаемся вправо
+        {
+            array[i, j + 1] = array[i, j] + 1;
+            j++;
+        }
+        while (i < rows - k) // Двигаемся вниз
+        {
+            array[i + 1, j] = array[i, j] + 1;
+            i++;
+        }
+        while (j >= k) // Двигаемся влево
+        {
+            array[i, j - 1] = array[i, j] + 1;
+            j--;
+        }
+        while (i > k) // Двигаемся вверх до k
+        {
+            array[i - 1, j] = array[i, j] + 1;
+            i--;
+        }
+    }
 
     return array;
 }
@@ -291,3 +307,5 @@ void Show2dArray(int[,] array)
 int[,] myArray = CreateRandom2dArray();
 Console.WriteLine();
 Show2dArray(myArray);
+
+*/
