@@ -126,9 +126,7 @@ FindStringWithMinSum (myArray);
 
 // Задача 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
 
-/*  result [i,j] = array1 [i,j] * array2 [i,j] + array1[i+1,j] * array2 [i,j+1];
-
-*/
+/*
 
 int[,] CreateRandom2dArray()
 {
@@ -196,14 +194,58 @@ Console.WriteLine();
 int[,] array2 = CreateRandom2dArray();
 Show2dArray(array2);
 MatrixMultiplex(array1, array2);
-/*
 
-Задача 60. ...Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
-Массив размером 2 x 2 x 2
-66(0,0,0) 25(0,1,0)
-34(1,0,0) 41(1,1,0)
-27(0,0,1) 90(0,1,1)
-26(1,0,1) 55(1,1,1)
+*/
+
+// Задача 60. ...Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
+
+/*
+int[,,] CreateRandom3dArray()
+{
+    Console.Write("Input a number of rows: ");
+    int rows = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a number of columns: ");
+    int columns = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a number of layers: ");
+    int layers = Convert.ToInt32(Console.ReadLine());
+    int[,,] array = new int[rows, columns, layers];
+    for (int i = 0; i < rows; i++)
+        for (int j = 0; j < columns; j++)
+            for (int z = 0; z < layers; z++)
+            {
+                array[i, j, z] = new Random().Next(10, 99); // Генерируем элемент массива
+                for (int x = 0; x < rows; x++) // Сравниваем сгенерированный элемент со всеми другими
+                    for (int y = 0; y < columns; y++)
+                        for (int k = 0; k < layers; k++)
+                        {
+                            if (array[i, j, z] == array[x, y, k]) // Если элемент уже есть, генерируем новый
+                                array[i, j, z] = new Random().Next(10, 99);
+                        }
+            }
+    return array;
+}
+
+void Show3dArray(int[,,] array)
+{
+    for (int z = 0; z < array.GetLength(2); z++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            for (int i = 0; i < array.GetLength(0); i++)
+                Console.Write($"{array[i, j, z]} ({i}, {j}, {z}) \t");
+            Console.WriteLine();
+        }
+        Console.WriteLine();
+    }
+}
+
+int[,,] myArray = CreateRandom3dArray();
+if (myArray.GetLength(0) * myArray.GetLength(1) * myArray.GetLength(2) < 89)
+    Show3dArray(myArray);
+else
+    Console.WriteLine(
+        "Невозможно создать массив из неповторяющихся двухзначных чисел такого размера"
+    );
 
 */
 
