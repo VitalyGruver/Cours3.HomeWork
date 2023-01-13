@@ -251,8 +251,6 @@ else
 
 // Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4.
 
-/*
-
 int[,] CreateRandom2dArray()
 {
     Console.Write("Input a number of rows: ");
@@ -282,7 +280,7 @@ int[,] CreateRandom2dArray()
             array[i, j - 1] = array[i, j] + 1;
             j--;
         }
-        while (i > k) // Двигаемся вверх до k
+        while (i > k) // Двигаемся вверх
         {
             array[i - 1, j] = array[i, j] + 1;
             i--;
@@ -307,5 +305,3 @@ void Show2dArray(int[,] array)
 int[,] myArray = CreateRandom2dArray();
 Console.WriteLine();
 Show2dArray(myArray);
-
-*/
