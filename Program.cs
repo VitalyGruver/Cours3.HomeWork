@@ -1,162 +1,33 @@
-﻿// Задача 47. Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
+﻿// Задайте значения M и N. Напишите программу, которая выведет все натуральные числа в промежутке от M до N.
 
-/*
-
-double[,] CreateRandom2dArray()
+void GetNums(int num1, int num2)
 {
-    Console.Write("Input a number of rows: ");
-    int rows = Convert.ToInt32(Console.ReadLine());
-    Console.Write("Input a number of columns: ");
-    int columns = Convert.ToInt32(Console.ReadLine());
-    Console.Write("Input a min possible value: ");
-    int minValue = Convert.ToInt32(Console.ReadLine());
-    Console.Write("Input a max possible value: ");
-    int maxValue = Convert.ToInt32(Console.ReadLine());
+    Console.Write(num1 + " ");
+    if (num1 > num2) GetNums(num1 - 1, num2);
+    if (num2 > num1) GetNums(num1 + 1, num2);
 
-    double[,] array = new double[rows, columns];
-
-    for (int i = 0; i < rows; i++) 
-        for (int j = 0; j < columns; j++) 
-            array[i,j] = Math.Round(new Random().Next(minValue, maxValue + 1) + new Random().NextDouble(),2);
-    
-    return array;
 }
 
-void Show2dArray (double[,] array)
+Console.Write("Input m: ");
+int num1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input n: ");
+int num2 = Convert.ToInt32(Console.ReadLine());
+
+GetNums(num1, num2);
+
+
+
+// Напишите программу, которая на вход принимает два числа A и B, и возводит число А в целую степень B.
+ 
+int Num (int a, int b)
 {
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            Console.Write(array[i,j] + "\t");
-        }
-        Console.WriteLine();
-    }
-    Console.WriteLine();
+    if (b > 0) return Num (a, b - 1) * a;
+    return 1;
 }
 
-double[,] myArray = CreateRandom2dArray();
-Show2dArray(myArray);
-
-*/
-
-// Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и возвращает значение этого элемента или же указание, что такого элемента нет.
-
-/*
-
-int[,] CreateRandom2dArray()
-{
-    int rows = new Random().Next(4, 6);
-    int columns = new Random().Next(4, 6);
-    int[,] array = new int[rows, columns];
-
-    for (int i = 0; i < rows; i++) 
-        for (int j = 0; j < columns; j++) 
-            array[i,j] = new Random().Next(0, 10);
-    
-    return array;
-}
-
-void Show2dArray (int[,] array)
-{
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            Console.Write(array[i,j] + " ");
-        }
-        Console.WriteLine();
-    }
-    Console.WriteLine();
-}
-
-bool FindArrayElementValue (int[,] array, int i, int j)
-{
-    return i < array.GetLength(0) && j < array.GetLength(1);
-}
-
-int[,] myArray = CreateRandom2dArray();
-Show2dArray(myArray);
-Console.WriteLine();
-Console.Write("Введите номер строки: ");
-int i = Convert.ToInt32(Console.ReadLine()) - 1;
-Console.Write("Введите номер столбца: ");
-int j = Convert.ToInt32(Console.ReadLine()) - 1;
-Console.WriteLine();
-
-bool result = FindArrayElementValue (myArray, i, j);
-if (result == true) 
-{
-    Console.WriteLine($"Ваш элемент - {myArray[i,j]}");
-}
-else Console.WriteLine("Ваш элемент не существует в данном массиве");
-
-*/
-
-// Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
-
-int[,] CreateRandom2dArray()
-{
-    Console.Write("Введите количество строк: ");
-    int rows = Convert.ToInt32(Console.ReadLine());
-    Console.Write("Введите количество столбцов: ");
-    int columns = Convert.ToInt32(Console.ReadLine());
-    Console.Write("Введите минимальное значение: ");
-    int minValue = Convert.ToInt32(Console.ReadLine());
-    Console.Write("Введите максимальное значение: ");
-    int maxValue = Convert.ToInt32(Console.ReadLine());
-
-    int[,] array = new int[rows, columns];
-
-    for (int i = 0; i < rows; i++)
-        for (int j = 0; j < columns; j++)
-            array[i, j] = new Random().Next(minValue, maxValue + 1);
-
-    return array;
-}
-
-void Show2dArray(int[,] array)
-{
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            Console.Write(array[i, j] + "\t");
-        }
-        Console.WriteLine();
-    }
-    Console.WriteLine();
-}
-
-void ShowArray(int[] array)
-{
-    for (int i = 0; i < array.Length; i++)
-    {
-        Console.Write(array[i] + "\t");
-    }
-    Console.WriteLine();
-}
-
-
-int[] FindAverageColumns(int[,] array)
-{
-    int sum = 0;
-    int[] average = new int[array.GetLength(1)];
-
-    for (int i = 0; i < array.GetLength(1); i++)
-    {
-        for (int j = 0; j < array.GetLength(0); j++)
-        {
-            sum = sum + array[j, i];
-        }
-        average[i] = sum;
-    }
-    return average;
-}
-
-int[,] myArray = CreateRandom2dArray();
-Show2dArray(myArray);
-Console.WriteLine();
-int[] averageArray = FindAverageColumns(myArray);
-ShowArray(averageArray);
-
+Console.Write("Input A: ");
+int a = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input B: ");
+int b = Convert.ToInt32(Console.ReadLine());
+int result = Num (a, b);
+Console.Write(result);
